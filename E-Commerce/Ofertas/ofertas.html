@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas imperdibles en AAT</title>
+    <link rel="shortcut icon" href="/Ejercicios/E-Commerce/logo.png" type="image/png">
+    <link rel="stylesheet" href="/Ejercicios/E-Commerce/main.css">
+    <link rel="stylesheet" href="/Ejercicios/E-Commerce/Ofertas/ofertas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <!-- MENÚ SUPERIOR, ENCABEZADO Y LOG IN -->
+    <header class="header">
+        <img class="header__logo" src="/Ejercicios/E-Commerce/logo.png" alt="logo de AAT">
+        <span class="material-symbols-outlined" id="header__menu-button" role="button" tabindex="0">menu</span>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="/Ejercicios/E-Commerce/index.html">Home</a></li>
+                <li class="header__nav-item" id="header__nav-item-categoria">Categorias
+                    <ul class="header__submenu">
+                        <li class="header__submenu-item"><a href="/Ejercicios/E-Commerce/Catalogo/catalogo.html">Ver todo</a></li>
+                        <li class="header__submenu-item" id="header__submenu-item-indumentaria">Indumentaria
+                            <ul class="header__submenu-anidado">
+                                <li class="header__submenu-item-anidado"><a href="/Ejercicios/E-Commerce/Categorias/Camperas/camperas.html">Camperas</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Pantalones</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Remeras</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Buzos</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Shorts</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__submenu-item" id="header__submenu-item-calzado">Calzado
+                            <ul class="header__submenu-anidado">
+                                <li class="header__submenu-item-anidado"><a href="">Zapatillas</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Sandalias</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Ojotas</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__submenu-item" id="header__submenu-item-accesorios">Accesorios
+                            <ul class="header__submenu-anidado">
+                                <li class="header__submenu-item-anidado"><a href="">Medias</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Gorras</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Llaveros</a></li>
+                                <li class="header__submenu-item-anidado"><a href="">Ropa Interior</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="header__nav-item"><a href="/Ejercicios/E-Commerce/Ofertas/ofertas.html">Ofertas</a></li>
+                <li class="header__nav-item"><a href="/Ejercicios/E-Commerce/About/about.html">About</a></li>
+                <li class="header__nav-item"><a href="/Ejercicios/E-Commerce/Contacto/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__icons">
+            <div class="header__contenedor-carrito">
+                <span class="material-symbols-outlined" id="header__icon-cart">shopping_cart</span>
+                <span class="header__contador-carrito">0</span>
+            </div>
+            <span class="material-symbols-outlined" id="header__icon-login">login</span>
+        </div>
+    </header>
+
+    <!-- CUERPO PRINCIPAL DEL SITIO WEB -->
+    <main class="main-ofertas">
+        <h2 class="main-ofertas__subtitulo">Productos en oferta</h2>
+        <section class="main-ofertas__lista-productos">
+            
+        </section>
+    </main>
+
+        <!-- MODAL DE LOG IN -->
+        <div class="modal-log-in" id="modal-log-in">
+            <div class="modal-log-in__container">
+                <h2 class="modal-log-in__titulo">Iniciar Sesión</h2>
+                <form class="modal-log-in__formulario">
+                    <div class="modal-log-in__item">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" required placeholder="admin@aat.com">
+                    </div>
+                    <div class="modal-log-in__item">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" required placeholder="1234">
+                    </div>
+                    <div class="modal-log-in__item">
+                        <button type="submit" class="btn-login-confirmar">Ingresar</button>
+                        <button type="button" class="btn-login-cancelar">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- MODAL DEL CARRITO -->
+        <div class="modal-carrito" id="modal-carrito">
+            <div class="modal-carrito__panel">
+                <div class="modal-carrito__encabezado">
+                    <h2>Tu Carrito</h2>
+                    <!-- Agrega un botón de cierre si lo deseas -->
+                </div>
+                <div class="modal-carrito__contenido">
+                    <!-- Aquí se inyectan los productos con JS -->
+                    <p>Tu carrito está vacío</p>
+                </div>
+                <div class="modal-carrito__footer">
+                    <p class="modal-carrito__total-compra"></p>
+                    <button class="modal-carrito__btn-vaciar">Vaciar Carrito</button>
+                    <button class="modal-carrito__btn-finalizar" disabled>Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN CHECKOUT (Oculta por defecto) -->
+        <section class="seccion-checkout hidden" id="seccion-checkout">
+            <div class="seccion-checkout__contenedor">
+                <form class="seccion-checkout__formulario">
+                    <h2>Datos de Envío</h2>
+                    <div class="seccion-checkout__items">
+                        <label>Nombre Completo: <input type="text" name="nombre" required></label>
+                        <label>Email: <input type="email" name="email" required></label>
+                        <label>Dirección: <input type="text" name="direccion" required></label>
+                    </div>
+                    <div class="seccion-checkout__botones">
+                        <button type="submit" class="btn-confirmar">Confirmar Compra</button>
+                        <button type="button" class="btn-volver-carrito">Volver al catálogo</button>
+                    </div>
+                </form>
+                <div class="seccion-checkout__resumen">
+                    <h3>Resumen del Pedido</h3>
+                    <div class="resumen-productos"></div>
+                    <h3 class="resumen-total"></h3>
+                </div>
+            </div>
+        </section>
+
+    <!-- PIE DEL SITIO WEB -->
+    <footer class="footer">
+        <nav class="footer__nav">
+            <ul class="footer__nav-list">
+                <li class="footer__nav-item"><a href="/Ejercicios/E-Commerce/Contacto/contacto.html">Contacto</a></li>
+                <li class="footer__nav-item"><a href="">Envíos</a></li>
+                <li class="footer__nav-item"><a href="">FAQs</a></li>
+                <li class="footer__nav-item"><a href="">Terminos y Condiciones</a></li>
+            </ul>
+        </nav>
+        <p class="footer__copyright">© 2025 AAT. Todos los derechos reservados.</p>
+    </footer>
+    <script src="/Ejercicios/E-Commerce/productos.js"></script>
+    <script src="/Ejercicios/E-Commerce/main.js"></script>
+    <script src="/Ejercicios/E-Commerce/Ofertas/ofertas.js"></script>
+</body>
+</html>

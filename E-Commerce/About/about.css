@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+.main-about__history{
+    padding: 10px 20px;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+}
+
+.main-about__history-title{
+    margin-top: 40px;
+    font-size: clamp(1.6rem, 5vw, 4rem);
+    text-align: center;
+    letter-spacing: 1.6px;
+    color: #000d;
+}
+
+.main-about__history-subtitle{
+    font-size: clamp(1.4rem, 4.5vw, 3rem);
+    text-align: center;
+    letter-spacing: 1.6px;
+    color: #000d;
+}
+
+.main-about__history-text{
+    padding: 20px 10px;
+    margin: auto;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    line-height: 1.6;
+    text-align: left;
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    color: #000b;
+    max-width: clamp(600px, 70vw, 1100px);
+}
