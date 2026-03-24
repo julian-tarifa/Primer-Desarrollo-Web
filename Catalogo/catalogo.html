@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de productos</title>
+    <link rel="shortcut icon" href="/Ejercicios/E-Commerce/logo.png" type="image/png">
+    <link rel="stylesheet" href="/Ejercicios/E-Commerce/main.css">
+    <link rel="stylesheet" href="/Ejercicios/E-Commerce/Catalogo/catalogo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+
+<body>
+    <!-- MENÚ SUPERIOR, ENCABEZADO Y LOG IN -->
+    <header class="header">
+        <img class="header__logo" src="/Ejercicios/E-Commerce/logo.png" alt="logo de AAT">
+        <span class="material-symbols-outlined" id="header__menu-button" role="button" tabindex="0">menu</span>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="/Ejercicios/E-Commerce/index.html">Home</a></li>
+                <li class="header__nav-item" id="header__nav-item-categoria">Categorias
+                    <ul class="header__submenu">
+                        <li class="header__submenu-item"><a href="/Ejercicios/E-Commerce/Catalogo/catalogo.html">Ver todo</a></li>
+                        <li class="header__submenu-item" id="header__submenu-item-indumentaria">Indumentaria
+                            <ul class="header__submenu-anidado">
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Campera">Camperas</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Pantalón">Pantalones</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Remera">Remeras</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Buzo">Buzos</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Short">Shorts</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__submenu-item" id="header__submenu-item-calzado">Calzado
+                            <ul class="header__submenu-anidado">
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Zapatilla">Zapatillas</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Sandalia">Sandalias</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Ojotas">Ojotas</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__submenu-item" id="header__submenu-item-accesorios">Accesorios
+                            <ul class="header__submenu-anidado">
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Medias">Medias</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Gorras">Gorras</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Llaveros">Llaveros</a></li>
+                                <li class="header__submenu-item-anidado"><a href="catalogo.html?subcategoria=Ropa-Interior">Ropa Interior</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="header__nav-item"><a href="/Ejercicios/E-Commerce/Ofertas/ofertas.html">Ofertas</a></li>
+                <li class="header__nav-item"><a href="/Ejercicios/E-Commerce/About/about.html">About</a></li>
+                <li class="header__nav-item"><a href="/Ejercicios/E-Commerce/Contacto/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__icons">
+            <div class="header__contenedor-carrito">
+                <span class="material-symbols-outlined" id="header__icon-cart">shopping_cart</span>
+                <span class="header__contador-carrito">0</span>
+            </div>
+            <span class="material-symbols-outlined" id="header__icon-login">login</span>
+        </div>
+    </header>
+
+    <!-- CUERPO PRINCIPAL DEL SITIO WEB -->
+    <main class="main main-catalogo">
+
+        <!-- ASIDE: Solo visible en desktop -->
+        <aside class="main-catalogo__filtros">
+            <!-- MODAL DE FILTROS (Mantenemos ID y clases para que JS funcione en mobile) -->
+            <div class="modal-filtros" id="modal-filtros">
+                <div class="modal-filtros__opciones">
+                    <button class="modal-filtros__cerrar">✕</button>
+                    <h3 class="modal-filtros__titulo">Filtros</h3>
+                    <div class="modal-filtros__seccion-categoria">Indumentaria
+                        <div class="modal-filtros__seccion-contenedor">
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="campera" name="campera" value="campera">
+                                <label for="campera">Camperas</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="pantalon" name="pantalon" value="pantalón">
+                                <label for="pantalon">Pantalones</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="remera" name="remera" value="remera">
+                                <label for="remera">Remeras</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="buzo" name="buzo" value="buzo">
+                                <label for="buzo">Buzos</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="short" name="short" value="short">
+                                <label for="short">Shorts</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-filtros__seccion-categoria">Calzado
+                        <div class="modal-filtros__seccion-contenedor">
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="zapatilla" name="zapatilla" value="zapatilla">
+                                <label for="zapatilla">Zapatillas</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="sandalias" name="sandalias" value="sandalias">
+                                <label for="sandalias">Sandalias</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="ojotas" name="ojotas" value="ojotas">
+                                <label for="ojotas">Ojotas</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-filtros__seccion-categoria">Accesorios
+                        <div class="modal-filtros__seccion-contenedor">
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="medias" name="medias" value="medias">
+                                <label for="medias">Medias</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="gorras" name="gorras" value="gorras">
+                                <label for="gorras">Gorras</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="llaveros" name="llaveros" value="llaveros">
+                                <label for="llaveros">Llaveros</label>
+                            </div>
+
+                            <div class="modal-filtros__contenedor-item">
+                                <input type="checkbox" id="ropa-interior" name="ropa-interior" value="ropa-interior">
+                                <label for="ropa-interior">Ropa Interior</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-filtros__aplicar">Aplicar</button>
+                </div>
+            </div>
+
+            <!-- MODAL DE ORDENAR (Mantenemos ID y clases) -->
+            <div class="modal-ordenar" id="modal-ordenar">
+                <div class="modal-ordenar__contenido">
+                    <button class="modal-ordenar__cerrar">✕</button>
+                    <h3 class="modal-ordenar__titulo">Ordenar por</h3>
+                    <div class="modal-ordenar__contenido-item">
+                        <label class="modal-ordenar__item"><input type="radio" name="orden" value="precio-asc"> Menor precio</label>
+                        <label class="modal-ordenar__item"><input type="radio" name="orden" value="precio-desc"> Mayor precio</label>
+                        <label class="modal-ordenar__item"><input type="radio" name="orden" value="nombre"> Nombre A-Z</label>
+                    </div>    
+                    <button class="modal-ordenar__aplicar">Aplicar</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CUERPO DEL CATÁLOGO -->
+        <div class="main-catalogo__contenido">
+            <h2 class="main-catalogo__subtitulo">Listado de productos</h2>
+
+            <!-- SECCION DE CONTROLES MOBILE Y DESKTOP -->
+            <section class="main-catalogo__controles">
+                <!-- SECCION DE CONTROLES MOBILE -->
+                <div class="main-catalogo__controles-mobile">
+                    <button id="btn-filtros-mobile">Filtrar</button>
+                    <button id="btn-ordenar-mobile">Ordenar</button>
+                </div>
+                <!-- SECCION DE CONTROLES DESKTOP -->
+                <div class="main-catalogo__controles-desktop">
+                    <input type="search" placeholder="Buscar...">
+                </div>
+            </section>
+
+            <!-- SECCION DE LISTA DE PRODUCTOS -->
+            <div class="main-catalogo__contador-productos">
+                
+            </div>
+            <section class="main-catalogo__lista-productos">
+                
+            </section>
+        </div>
+
+        <!-- MODAL DE COMPRA -->
+        <div class="modal-comprar" id="modal-comprar">
+            <button class="modal-comprar__btn-cerrar">X</button>
+            <div class="modal-comprar__contenido"></div>
+        </div>
+
+        <!-- MODAL DE CARRITO DE COMPRAS -->
+        <div class="modal-carrito" id="modal-carrito">
+            <div class="modal-carrito__panel">
+                <h3 class="modal-carrito__titulo">Tu Carrito</h3>
+                <div class="modal-carrito__contenido"></div>
+                <div class="modal-carrito__total-compra"></div>
+                <div class="modal-carrito__botones">
+                    <button class="modal-carrito__btn-vaciar">Vaciar Carrito</button>
+                    <button class="modal-carrito__btn-finalizar">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL DE LOG IN -->
+        <div class="modal-log-in" id="modal-log-in">
+            <h3 class="modal-log-in__titulo">Iniciar Sesión</h3>
+            <form class="modal-log-in__formulario">
+                <div class="modal-log-in__item">
+                    <label for="input-email">E-Mail</label>
+                    <input class="modal-log-in__input-email" id="input-email" type="email" name="email" required>
+                    <label for="input-password">Contraseña</label>
+                    <input class="modal-log-in__input-password" id="input-password" type="password" name="password" required>
+                </div>
+                <div class="modal-log-in__botones">
+                    <button type="submit" class="btn-login-confirmar">Ingresar</button>
+                    <button type="button" class="btn-login-cancelar" id="btn-login-cancelar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- SECCION DE CHECKOUT PARA FINALIZAR COMPRA -->
+    <section class="seccion-checkout hidden" id="seccion-checkout">
+        <div class="seccion-checkout__contenedor">
+            <div class="seccion-checkout__resumen">
+                <h3>Tu Pedido</h3>
+                <div class="resumen-productos"></div>
+                <div class="resumen-total"></div>
+            </div>
+            <form class="seccion-checkout__formulario">
+                <h3 class="seccion-checkout__titulo">Datos de Envío</h3>
+                <div class="seccion-checkout__items">
+                    <label for="input-nombre">Nombre</label>
+                    <input class="seccion-checkout__input-nombre" id="input-nombre" type="text" name="nombre" required>
+
+                    <label for="input-apellido">Apellido</label>
+                    <input class="seccion-checkout__input-apellido" id="input-apellido" type="text" name="apellido" required>
+                    
+                    <label for="input-envio">Direccion</label>
+                    <input class="seccion-checkout__input-direccion" id="input-direccion" type="text" name="direccion" required>
+                    
+                    <label for="input-email">E-Mail</label>
+                    <input class="seccion-checkout__input-email" id="input-email" type="email" name="email" required>
+
+                    <label for="input-telefono">Telefono</label>
+                    <input class="seccion-checkout__input-telefono" id="input-telefono" type="tel" name="telefono">
+                </div>
+                <div class="seccion-checkout__botones">
+                    <button class="btn-volver-carrito" type="button">Volver al catalogo</button>
+                    <button class="btn-confirmar" type="submit">Confirmar Compra</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DEL SITIO WEB -->
+    <footer class="footer">
+        <nav class="footer__nav">
+            <ul class="footer__nav-list">
+                <li class="footer__nav-item"><a href="/Ejercicios/E-Commerce/Contacto/contacto.html">Contacto</a></li>
+                <li class="footer__nav-item"><a href="">Envíos</a></li>
+                <li class="footer__nav-item"><a href="">FAQs</a></li>
+                <li class="footer__nav-item"><a href="">Terminos y Condiciones</a></li>
+            </ul>
+        </nav>
+        <p class="footer__copyright">© 2025 AAT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/Ejercicios/E-Commerce/productos.js"></script>
+    <script src="/Ejercicios/E-Commerce/main.js"></script>
+    <script src="/Ejercicios/E-Commerce/Catalogo/catalogo.js"></script>
+</body>
+</html>
